@@ -132,7 +132,6 @@ def cobranza(request):
     return HttpResponse("cobranza")
 
 
-
 """
 Sistema de logueo de usuarios.
 """
