@@ -1,12 +1,15 @@
-{% if user.is_authenticated %}
-	<h1>HOME</h1><br>
-	{% if user.is_staff %}
-		<h2> ADMIN </h2>
-	{% else %}
-		<h2> PROFESIONAL </h2>
-	{% endif %}
-	<a href="/">pacientes</a>
-	<a href="/cobranza">cobranza</a>
-	<a href="/facturacion">facturacion</a>	
-
+{% if user.is_staff %}
+	<h2> ADMIN </h2>
+	
+	<a href="/">pacientes</a><br>
+	<a href="/areas">areas</a><br>
+	<a href="/profesionales">profesionales</a><br>
+    <a href="/cobranza">cobranza</a>
+{% elif user.is_authenticated %}
+	<h2> PROFESIONAL </h2>
+	
+	<a href="/">pacientes</a><br>
+    <a href="/facturacion">facturacion</a><br>
+    <a href="/cobranza">cobranza</a>
 {% endif %}
+
